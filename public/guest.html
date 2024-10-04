@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .username {
+            font-weight: bold;
+        }
+        #button {
+            padding: 10px;
+            width: 10%;
+        }
+        #button:hover {
+            background-color: rgb(154, 154, 154);
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="username" id="usernameDisplay">Guest</div>
+        <button onclick="Logout()" id="button">Log Out</button>
+    </div>
+    <h1>Welcome to your Dashboard!</h1>
+
+    <script>
+
+        async function Logout() {
+            window.location.href = 'LoggedOut.html';
+        }
+    </script>
+</body>
+</html>

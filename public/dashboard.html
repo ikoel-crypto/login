@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .username {
+            font-weight: bold;
+        }
+        #button {
+            padding: 10px;
+            width: 10%;
+        }
+        #button:hover {
+            background-color: rgb(154, 154, 154);
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="username" id="usernameDisplay">Username</div>
+        <button onclick="UserSetting()" id="button">User Settings</button>
+        <button onclick="Logout()" id="button">Log Out</button>
+    </div>
+    <h1>Hello</h1>  <h1 id="user">Username</h1>
+
+    <script>
+        // Store username in local storage after login
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            document.getElementById('usernameDisplay').textContent = username || 'Guest';
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            document.getElementById('user').textContent = username || 'Guest';
+        });
+
+        async function UserSetting() {
+            window.location.href = 'user.html';
+        }
+
+        async function Logout() {
+            window.location.href = 'LoggedOut.html';
+        }
+    </script>
+</body>
+</html>
+

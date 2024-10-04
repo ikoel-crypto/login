@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoggedOut</title>
+</head>
+<style>
+    #button {
+        padding: 10px;
+        width: 10%;
+    }
+    #button:hover {
+        background-color: rgb(154, 154, 154);
+        color: black;
+        cursor: pointer;
+    }
+</style>
+<script>
+    async function Back() {
+        window.location.href = 'index.html';
+    }
+</script>
+<body>
+    <h1>Loged out successfully, you could close this page safely now.</h1>
+    <button onclick="Back()" id="button">Back to Log In Page</button>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 106%;
+}
+
+#button:hover {
+    background-color: rgb(154, 154, 154);
+    color: black;
+    cursor: pointer;
+}
+
+#reg-username:hover {
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
+
+#reg-password:hover {
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
+
+#login-username:hover {
+    background-color: rgb(224, 224, 224);
+    color: black;
+}
+
+#login-password:hover {
+    background-color: rgb(224, 224, 224);
+    color: black;
+}

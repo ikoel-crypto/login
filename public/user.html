@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <h2>User Settings</h2>
+    <div class="container">
+        <div class="input">
+            <input type="text" id="new-username" placeholder="New Username" required>
+            <br>
+            <input type="password" id="old-password" placeholder="Old Password" required>
+            <input type="password" id="new-password" placeholder="New Password" required>
+            <br>
+        </div>
+        <button onclick="updateUser()" id="button">Update</button>
+        <br>
+        <button onclick="Back()" id="button">Back</button>
+    </div>
+
+    <script>
+        async function updateUser() {
+            const newUsername = document.getElementById('new-username').value;
+            const oldPassword = document.getElementById('old-password').value;
+            const newPassword = document.getElementById('new-password').value;
+            const oldUsername = localStorage.getItem('username');
+
+            const response = await fetch('http://localhost:3000/update-user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ oldUsername, newUsername, oldPassword, newPassword }),
+            });
+
+            if (response.ok) {
+                alert('User updated successfully!');
+                localStorage.setItem('username', newUsername);
+                window.location.href = 'dashboard.html'; // Redirect back to dashboard
+            } else {
+                alert('Error updating user: ' + await response.text());
+            }
+        }
+
+        async function Back() {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
+
